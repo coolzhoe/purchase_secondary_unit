@@ -97,7 +97,7 @@ class Line(metaclass=PoolMeta):
             self.amount = self.on_change_with_amount()
 
     @fields.depends('unit_price', 'unit', 'secondary_unit',
-        'secondary_uom_factor', 'secondary_uom_rate')
+        'secondary_uom_factor', 'secondary_uom_rate','quantity')
     def on_change_with_secondary_unit_price(self, name=None):
         pool = Pool()
         Uom = pool.get('product.uom')
